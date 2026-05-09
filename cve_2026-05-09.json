@@ -1,23 +1,65 @@
 {
-  "generated_at": "2026-05-09T13:04:36Z",
+  "generated_at": "2026-05-09T13:21:00Z",
   "cvedb_version": "2.1.0",
   "filter_date": "2026-05-09",
-  "count": 5,
+  "count": 10,
   "cves": [
     {
-      "cve_id": "CVE-2018-25316",
+      "cve_id": "CVE-2026-7567",
       "published": "N/A",
       "modified": "N/A",
-      "cvss": 9.3,
-      "cvss_version": 4.0,
-      "epss": 0.00161,
+      "cvss": 9.8,
+      "cvss_version": 3.0,
+      "epss": 0.00066,
       "severity": "CRITICAL",
       "kev": false,
       "ransomware": false,
-      "summary": "Tenda W308R v2 V5.07.48 contains a cookie session weakness vulnerability that allows unauthenticated attackers to modify DNS settings by exploiting insufficient session validation. Attackers can send GET requests to the goform/AdvSetDns endpoint with a crafted admin language cookie to change DNS servers and redirect user traffic to malicious sites.",
+      "summary": "The Temporary Login plugin for WordPress is vulnerable to Authentication Bypass in versions up to and including 1.0.0. This is due to improper input validation in the maybe_login_temporary_user() function, which fails to verify that the 'temp-login-token' GET parameter is a scalar string before processing it. When the parameter is supplied as an array, PHP's empty() check is bypassed and sanitize_key() returns an empty string, which is then passed as the meta_value to get_users(). WordPress ignores an empty meta_value and returns all users matching the meta_key '_temporary_login_token', allowing authentication without a valid token. This makes it possible for unauthenticated attackers to authenticate as any active temporary login user by sending a single crafted GET request.",
       "references": [
-        "https://www.exploit-db.com/exploits/44373",
-        "https://www.vulncheck.com/advisories/tenda-w308r-v2-cookie-session-weakness-dns-change"
+        "https://plugins.trac.wordpress.org/browser/temporary-login/tags/1.0.0/core/admin.php#L135",
+        "https://plugins.trac.wordpress.org/browser/temporary-login/tags/1.0.0/core/admin.php#L179",
+        "https://plugins.trac.wordpress.org/browser/temporary-login/tags/1.0.0/core/options.php#L157",
+        "https://plugins.trac.wordpress.org/browser/temporary-login/trunk/core/admin.php#L135",
+        "https://plugins.trac.wordpress.org/browser/temporary-login/trunk/core/admin.php#L179"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7458",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 9.8,
+      "cvss_version": 3.0,
+      "epss": 0.00065,
+      "severity": "CRITICAL",
+      "kev": false,
+      "ransomware": false,
+      "summary": "The User Verification by PickPlugins plugin for WordPress is vulnerable to authentication bypass in all versions up to, and including, 2.0.46. This is due to the use of a loose PHP comparison operator to validate OTP codes in the \"user_verification_form_wrap_process_otpLogin\" function. This makes it possible for unauthenticated attackers to log in as any user with a verified email address, such as an administrator, by submitting a \"true\" OTP value.",
+      "references": [
+        "https://plugins.trac.wordpress.org/browser/user-verification/trunk/includes/functions-rest.php%23L234?rev=3461175",
+        "https://plugins.trac.wordpress.org/browser/user-verification/trunk/templates/email-otp-login-form/hook.php%23L164?rev=3461175",
+        "https://plugins.trac.wordpress.org/browser/user-verification/trunk/templates/email-otp-login-form/index.php%23L71?rev=3461175",
+        "https://plugins.trac.wordpress.org/changeset/3519113/user-verification",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/35b86488-8f68-4738-a9a8-76d0b7976165?source=cve"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7411",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 10.0,
+      "cvss_version": 3.0,
+      "epss": 0,
+      "severity": "CRITICAL",
+      "kev": false,
+      "ransomware": false,
+      "summary": "In Eclipse BaSyx Java Server SDK versions prior to 2.0.0-milestone-10, inadequate path normalization in the Submodel HTTP API allows an unauthenticated remote attacker to perform a path traversal attack. By supplying a maliciously crafted fileName parameter during a file upload operation, an attacker can bypass intended storage boundaries and write arbitrary files to any location on the host filesystem accessible by the Java process. This can lead to Remote Code Execution (RCE) and complete system compromise.",
+      "references": [
+        "https://gitlab.eclipse.org/security/cve-assignment/-/issues/102",
+        "https://gitlab.eclipse.org/security/vulnerability-reports/-/issues/423"
       ],
       "cpes": [],
       "vendors": []
@@ -42,6 +84,97 @@
       "vendors": []
     },
     {
+      "cve_id": "CVE-2026-7372",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 9.0,
+      "cvss_version": 3.0,
+      "epss": 0.0013,
+      "severity": "CRITICAL",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A stack overflow vulnerability exists in the WebCam Server Login functionality of GeoVision GV-VMS V20 20.0.2. A specially crafted HTTP request can lead to an arbitrary code execution. An attacker can make an unauthenticated HTTP request to trigger this vulnerability.\n\n#### Stack-overflow via unconstrained sscanf\n\nThe call to `sscanf` at [1] to split the `Buffer` variable into the `username` and `password` variables doesn't limit the size of the extracted content to match the destination buffers' sizes. In this case, if either the username or password decoded from the authorization string exceeds `40` characters (the size the stack variables  `username` and `password`) then a stack overflow will occur. \n\n\n\nThe data is controlled by an attacker, but sronger constraints (e.g. no null bytes) may make exploitation harder. A successful attack could  lead to full code execution as SYSTEM on the machine running the service.",
+      "references": [
+        "https://talosintelligence.com/vulnerability_reports/",
+        "https://www.geovision.com.tw/cyber_security.php"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7161",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 9.3,
+      "cvss_version": 3.0,
+      "epss": 0.00044,
+      "severity": "CRITICAL",
+      "kev": false,
+      "ransomware": false,
+      "summary": "An insufficient encryption vulnerability exists in the Device Authentication functionality of GeoVision GV-IP Device Utility 9.0.5. Listening to broadcast packets can lead to credentials leak. An attacker can listen to broadcast messages to trigger this vulnerability.\n\n\nWhen interacting with various Geovision devices on the network, the utility may send privileged commands; in order to do so, the username and password of the device need to be provided. In some instances the command is broadcasted over UDP and the username/password are encrypted using a cryptographic protocol that appears to be derivated from Blowfish. However the symmetric key used for the encryption is also included in the packet, and thus the security of the username/password only relies on the \"obscurity\" of the encryption scheme. An attacker on the same LAN can listen to the broadcast traffic once an admin user interacts with the device, and decrypt the credentials using their own implementation of the algorithm. With this password the attacker would have full control over the device configuration, allowing them to change its ip address or even reset it to factory default.",
+      "references": [
+        "https://talosintelligence.com/vulnerability_reports/",
+        "https://www.geovision.com.tw/cyber_security.php"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-5722",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 9.8,
+      "cvss_version": 3.0,
+      "epss": 0.00198,
+      "severity": "CRITICAL",
+      "kev": false,
+      "ransomware": false,
+      "summary": "The MoreConvert Pro plugin for WordPress is vulnerable to Authentication Bypass in all versions up to, and including, 1.9.14. This is due to the guest waitlist verification flow not invalidating or regenerating verification tokens when the customer email address is changed. This makes it possible for unauthenticated attackers to authenticate as existing users, including administrators, by obtaining a valid guest verification token for an attacker-controlled email, changing the same guest customer email to the target account email through the public waitlist flow, and then using the original verification link.",
+      "references": [
+        "https://moreconvert.com/changelog/",
+        "https://wordpress.org/plugins/smart-wishlist-for-more-convert/",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/fe887475-f7e8-4fda-a793-bc6f37b70f3e?source=cve"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-5294",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 9.8,
+      "cvss_version": 3.0,
+      "epss": 0.00192,
+      "severity": "CRITICAL",
+      "kev": false,
+      "ransomware": false,
+      "summary": "The Geeky Bot plugin for WordPress is vulnerable to Missing Authorization in versions up to, and including, 1.2.2. This is due to a nopriv AJAX route allowing attacker-controlled model/function dispatch and reaching a plugin installer helper that downloads and unzips attacker-supplied ZIP files into wp-content/plugins/. This makes it possible for unauthenticated attackers to perform arbitrary plugin installation and achieve remote code execution.",
+      "references": [
+        "https://plugins.trac.wordpress.org/changeset/3497169/geeky-bot",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/a1817c58-e807-4ef2-a382-28ca2fd5239e?source=cve"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-4882",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 9.8,
+      "cvss_version": 3.0,
+      "epss": 0.00064,
+      "severity": "CRITICAL",
+      "kev": false,
+      "ransomware": false,
+      "summary": "The User Registration Advanced Fields plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the 'URAF_AJAX::method_upload' function in all versions up to, and including, 1.6.20. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible. Note: The vulnerability can only be exploited if a \"Profile Picture\" field is added to the form.",
+      "references": [
+        "https://wpuserregistration.com/features/advanced-fields/",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/f2c6a377-216f-4d61-8fae-ec5bc2793cdf?source=cve"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
       "cve_id": "CVE-2026-4670",
       "published": "N/A",
       "modified": "N/A",
@@ -54,47 +187,6 @@
       "summary": "Authentication bypass by primary weakness vulnerability in Progress Software MOVEit Automation allows Authentication Bypass.\n\nThis issue affects MOVEit Automation: from 2025.0.0 before 2025.0.9, from 2024.0.0 before 2024.1.8, versions prior to 2024.0.0.",
       "references": [
         "https://community.progress.com/s/article/MOVEit-Automation-Critical-Security-Alert-Bulletin-April-2026-CVE-2026-4670-CVE-2026-5174"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2022-50993",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 9.3,
-      "cvss_version": 4.0,
-      "epss": 0.00215,
-      "severity": "CRITICAL",
-      "kev": false,
-      "ransomware": false,
-      "summary": "Weaver (Fanwei) E-office versions prior to 10.0_20221201 contain an unauthenticated arbitrary file upload vulnerability in the OfficeServer.php endpoint that allows remote attackers to upload malicious files by sending multipart POST requests with arbitrary filenames and disguised content types. Attackers can upload PHP webshells to the Document directory and execute them via HTTP GET requests to achieve remote code execution as the web server user. Exploitation evidence was first observed by the Shadowserver Foundation on 2022-10-10 (UTC).",
-      "references": [
-        "https://bbs.chaitin.cn/topic/37",
-        "https://cn-sec.com/archives/1453025.html",
-        "https://service.e-office.cn/knowledge/detail/5",
-        "https://www.vulncheck.com/advisories/weaver-e-office-10-0-20221201-unauthenticated-arbitrary-file-read-via-xmlrpcservlet"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2025-71284",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 9.3,
-      "cvss_version": 4.0,
-      "epss": 0.00494,
-      "severity": "CRITICAL",
-      "kev": false,
-      "ransomware": false,
-      "summary": "Synway SMG Gateway Management Software contains an OS command injection vulnerability in the RADIUS configuration endpoint at /en/9-2radius.php where the radius_address POST parameter is split and interpolated directly into a sed command without sanitization. An unauthenticated remote attacker can inject arbitrary shell commands by submitting a POST request with crafted radius_address, radius_address2, shared_secret2, source_ip, timeout, or retry parameters along with save=1 and enable_radius=1 to achieve remote code execution. Exploitation evidence was first observed by the Shadowserver Foundation on 2025-07-11 (UTC).",
-      "references": [
-        "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/synway/synwaysmg-radius-rce.yaml",
-        "https://mp.weixin.qq.com/s/PyepoFSuQ63E3RnpQa9nsA",
-        "https://mrxn.net/jswz/synway-9-2radius-rce.html",
-        "https://www.synway.net/",
-        "https://www.vulncheck.com/advisories/synway-smg-gateway-management-software-os-command-injection-via-radius-address"
       ],
       "cpes": [],
       "vendors": []

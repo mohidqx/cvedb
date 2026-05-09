@@ -8,7 +8,7 @@
 cvedb v2.0.0 — Shodan CVE Tracker | github.com/mohidqx/cvedb
 ```
 
-![Results](image.png)
+![Sample Run](image-1.png)
 
 ---
 
