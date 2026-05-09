@@ -1,6 +1,6 @@
 # CVE Tracker | TeamCyberOps
 
-> [!INFO]
+> [!IMPORTANT]
 > Fast, terminal-native CVE tracker powered by [Shodan's CVEDB](https://cvedb.shodan.io).  
 > Self-updating · Colour-coded severity · Multiple output formats · KEV/EPSS awareness
 
