@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-09T12:30:59Z",
+  "generated_at": "2026-05-09T13:04:36Z",
   "cvedb_version": "2.1.0",
   "filter_date": "2026-05-09",
-  "count": 20,
+  "count": 5,
   "cves": [
     {
       "cve_id": "CVE-2018-25316",
@@ -23,385 +23,78 @@
       "vendors": []
     },
     {
-      "cve_id": "CVE-2018-25315",
+      "cve_id": "CVE-2026-7381",
       "published": "N/A",
       "modified": "N/A",
-      "cvss": 8.6,
-      "cvss_version": 4.0,
-      "epss": 0.00018,
-      "severity": "HIGH",
-      "kev": false,
-      "ransomware": false,
-      "summary": "Alloksoft Video joiner 4.6.1217 contains a buffer overflow vulnerability that allows local attackers to execute arbitrary code by supplying a malicious string in the License Name field. Attackers can craft a payload with structured exception handler (SEH) overwrite and shellcode to achieve code execution when the application processes the license registration input.",
-      "references": [
-        "http://www.alloksoft.com",
-        "http://www.alloksoft.com/joiner.htm",
-        "https://www.exploit-db.com/exploits/44364",
-        "https://www.vulncheck.com/advisories/alloksoft-video-joiner-buffer-overflow-via-license-name"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2018-25314",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 8.6,
-      "cvss_version": 4.0,
-      "epss": 0.00018,
-      "severity": "HIGH",
-      "kev": false,
-      "ransomware": false,
-      "summary": "Allok soft WMV to AVI MPEG DVD WMV Converter 4.6.1217 contains a buffer overflow vulnerability that allows local attackers to execute arbitrary code by supplying an oversized string in the License Name field. Attackers can craft a malicious input containing shellcode with structured exception handler (SEH) overwrite to bypass protections and execute code with application privileges.",
-      "references": [
-        "http://www.alloksoft.com",
-        "http://www.alloksoft.com/wmv.htm",
-        "https://www.exploit-db.com/exploits/44365",
-        "https://www.vulncheck.com/advisories/allok-soft-wmv-to-avi-mpeg-dvd-wmv-converter-buffer-overflow"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2018-25313",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 6.9,
-      "cvss_version": 4.0,
-      "epss": 0.00017,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "SysGauge 4.5.18 contains a buffer overflow vulnerability in the proxy configuration handler that allows local attackers to cause a denial of service by supplying an oversized string. Attackers can inject a large payload through the Proxy Server Host Name field in the Options menu to crash the application.",
-      "references": [
-        "https://www.exploit-db.com/exploits/44372",
-        "https://www.vulncheck.com/advisories/sysgauge-local-denial-of-service-via-proxy-configuration"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-34965",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 8.7,
-      "cvss_version": 4.0,
-      "epss": 0.00431,
-      "severity": "HIGH",
-      "kev": false,
-      "ransomware": false,
-      "summary": "Cockpit CMS contains an authenticated remote code execution vulnerability in the /cockpit/collections/save_collection endpoint that allows authenticated attackers with collection management privileges to inject arbitrary PHP code into collection rules parameters. Attackers can inject malicious PHP code through rule parameters which is written directly to server-side PHP files and executed via include() to achieve arbitrary command execution on the underlying server.",
-      "references": [
-        "https://gist.github.com/thepiyushkumarshukla/64d2318518b17f529bc3ccb11fd5be90",
-        "https://github.com/agentejo/cockpit",
-        "https://github.com/agentejo/cockpit/commits/494765e4f0fb9484f320aee0c6ee889b6fa789b9",
-        "https://www.vulncheck.com/advisories/cockpit-cms-authenticated-remote-code-execution-via-collections"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7401",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 2.1,
-      "cvss_version": 4.0,
-      "epss": 0.00035,
-      "severity": "LOW",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A vulnerability was detected in SourceCodester CET Automated Grading System with AI Predictive Analytics 1.0. This vulnerability affects unknown code of the file /index.php?action=register of the component Registration. The manipulation of the argument student_id/full_name/section/username results in cross site scripting. The attack can be launched remotely. The exploit is now public and may be used.",
-      "references": [
-        "https://github.com/Xmyronn/Stored-XSS-in-CET-Automated-Grading-System-Student-Registration-Unauthenticated-Admin-Dashboard-.git",
-        "https://vuldb.com/submit/803525",
-        "https://vuldb.com/vuln/360133",
-        "https://vuldb.com/vuln/360133/cti",
-        "https://www.sourcecodester.com/"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7400",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 5.5,
-      "cvss_version": 4.0,
-      "epss": 0.00067,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A security vulnerability has been detected in geekgod382 filesystem-mcp-server 1.0.0. This issue affects the function is_path_allowed of the file server.py of the component read_file_tool/write_file_tool. Such manipulation leads to path traversal. The attack can be launched remotely. The exploit has been disclosed publicly and may be used. Upgrading to version 1.1.0 is capable of addressing this issue. The name of the patch is 45364545fc60dc80aadcd4379f08042d3d3d292e. Upgrading the affected component is advised.",
-      "references": [
-        "https://github.com/geekgod382/filesystem-mcp-server/",
-        "https://github.com/geekgod382/filesystem-mcp-server/commit/45364545fc60dc80aadcd4379f08042d3d3d292e",
-        "https://github.com/geekgod382/filesystem-mcp-server/issues/1",
-        "https://github.com/geekgod382/filesystem-mcp-server/releases/tag/v1.1.0",
-        "https://vuldb.com/submit/803495"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7426",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 6.1,
-      "cvss_version": 4.0,
-      "epss": 0.00019,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "Insufficient validation of the prefix length field in IPv6 Router Advertisement processing in FreeRTOS-Plus-TCP before V4.2.6 and V4.4.1 allows an adjacent network actor to cause memory corruption by sending a crafted Router Advertisement with a prefix length value exceeding the maximum valid length, resulting in a heap buffer overflow. Users processing IPv4 RA only are not impacted.\n\n\n\nTo mitigate this issue, users should upgrade to the fixed version when available.",
-      "references": [
-        "https://aws.amazon.com/security/security-bulletins/2026-023-aws/",
-        "https://github.com/FreeRTOS/FreeRTOS-Plus-TCP/releases/tag/V4.2.6",
-        "https://github.com/FreeRTOS/FreeRTOS-Plus-TCP/releases/tag/V4.4.1",
-        "https://github.com/FreeRTOS/FreeRTOS-Plus-TCP/security/advisories/GHSA-97qg-4359-xm3x"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7425",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 6.0,
-      "cvss_version": 4.0,
-      "epss": 0.00019,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "Insufficient option length validation in the IPv6 Router Advertisement parser in FreeRTOS-Plus-TCP before V4.2.6 and V4.4.1 allows an adjacent network actor to cause a denial of service (device crash) by sending a crafted Router Advertisement with a truncated PREFIX_INFORMATION option that is smaller than the expected structure size.\n\n\n\nTo mitigate this issue, users should upgrade to the fixed version when available.",
-      "references": [
-        "https://aws.amazon.com/security/security-bulletins/2026-023-aws/",
-        "https://github.com/FreeRTOS/FreeRTOS-Plus-TCP/releases/tag/V4.2.6",
-        "https://github.com/FreeRTOS/FreeRTOS-Plus-TCP/releases/tag/V4.4.1",
-        "https://github.com/FreeRTOS/FreeRTOS-Plus-TCP/security/advisories/GHSA-gffr-xgjg-jh9j"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2025-50328",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 7.3,
+      "cvss": 9.1,
       "cvss_version": 3.0,
-      "epss": 0.00025,
-      "severity": "HIGH",
+      "epss": 0.00013,
+      "severity": "CRITICAL",
       "kev": false,
       "ransomware": false,
-      "summary": "A vulnerability in B1 Free Archiver v1.5.86 allows files extracted from downloaded archives to bypass Windows Mark of the Web (MotW) protections. When an archive is downloaded from the internet and extracted using B1 Free Archiver, the software fails to propagate the 'Zone.Identifier' alternate data stream to the extracted files. As a result, these files can be executed without triggering Windows Defender SmartScreen warnings or security prompts, enabling untrusted code execution without standard security restrictions.",
+      "summary": "Plack::Middleware::XSendfile versions through 1.0053 for Perl can allow client-controlled path rewriting.\n\nPlack::Middleware::XSendfile allows the variation setting (sendfile type) to be set by the client via the X-Sendfile-Type header, if it is not considered in the middleware constructor or the Plack environment.\n\nA malicious client can set the X-Sendfile-Type header to \"X-Accel-Redirect\" to services running behind nginx reverse proxies, and then set the X-Accel-Mapping to map the path to an arbitrary file on the server.\n\nSince 1.0053, Plack::Middleware::XSendfile is deprecated and will be removed from future releases of Plack.\n\nThis is similar to CVE-2025-61780 for Rack::Sendfile, although Plack::Middleware::XSendfile has some mitigations that disallow regular expressions to be used in the mapping, and only apply the mapping for the \"X-Accel-Redirect\" type.",
       "references": [
-        "https://b1.org/",
-        "https://github.com/math69b/B1FREE/blob/main/B1%20Free%20Archiver%20version",
-        "https://github.com/math69b/B1FREE/blob/main/B1%20Free%20Archiver%20version"
+        "https://metacpan.org/release/MIYAGAWA/Plack-1.0053/changes",
+        "https://metacpan.org/release/MIYAGAWA/Plack-1.0053/view/lib/Plack/Middleware/XSendfile.pm#DEPRECATION-NOTICE",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61780"
       ],
       "cpes": [],
       "vendors": []
     },
     {
-      "cve_id": "CVE-2026-1858",
+      "cve_id": "CVE-2026-4670",
       "published": "N/A",
       "modified": "N/A",
-      "cvss": 4.8,
+      "cvss": 9.8,
       "cvss_version": 3.0,
-      "epss": 0.0001,
-      "severity": "MEDIUM",
+      "epss": 0.00189,
+      "severity": "CRITICAL",
       "kev": false,
       "ransomware": false,
-      "summary": "wget2 accepts a server certificate with incorrect Key Usage (KU) or Extended Key Usage (EKU). If the attackers compromise a certificate (with the associated private key) issued for a different purpose, they may be able to reuse it for TLS server authentication.",
+      "summary": "Authentication bypass by primary weakness vulnerability in Progress Software MOVEit Automation allows Authentication Bypass.\n\nThis issue affects MOVEit Automation: from 2025.0.0 before 2025.0.9, from 2024.0.0 before 2024.1.8, versions prior to 2024.0.0.",
       "references": [
-        "https://www.tenable.com/security/research/tra-2026-37"
+        "https://community.progress.com/s/article/MOVEit-Automation-Critical-Security-Alert-Bulletin-April-2026-CVE-2026-4670-CVE-2026-5174"
       ],
       "cpes": [],
       "vendors": []
     },
     {
-      "cve_id": "CVE-2026-7408",
+      "cve_id": "CVE-2022-50993",
       "published": "N/A",
       "modified": "N/A",
-      "cvss": 2.0,
+      "cvss": 9.3,
       "cvss_version": 4.0,
-      "epss": 0.00036,
-      "severity": "LOW",
+      "epss": 0.00215,
+      "severity": "CRITICAL",
       "kev": false,
       "ransomware": false,
-      "summary": "A vulnerability was detected in SourceCodester Pizzafy Ecommerce System 1.0. Affected by this issue is the function save_menu of the file /admin/ajax.php?action=save_menu. Performing a manipulation results in sql injection. The attack can be initiated remotely. The exploit is now public and may be used.",
+      "summary": "Weaver (Fanwei) E-office versions prior to 10.0_20221201 contain an unauthenticated arbitrary file upload vulnerability in the OfficeServer.php endpoint that allows remote attackers to upload malicious files by sending multipart POST requests with arbitrary filenames and disguised content types. Attackers can upload PHP webshells to the Document directory and execute them via HTTP GET requests to achieve remote code execution as the web server user. Exploitation evidence was first observed by the Shadowserver Foundation on 2022-10-10 (UTC).",
       "references": [
-        "https://github.com/r3ng4f/Pizzafy_1/blob/main/02-exploit.md",
-        "https://vuldb.com/submit/803623",
-        "https://vuldb.com/vuln/360142",
-        "https://vuldb.com/vuln/360142/cti",
-        "https://www.sourcecodester.com/"
+        "https://bbs.chaitin.cn/topic/37",
+        "https://cn-sec.com/archives/1453025.html",
+        "https://service.e-office.cn/knowledge/detail/5",
+        "https://www.vulncheck.com/advisories/weaver-e-office-10-0-20221201-unauthenticated-arbitrary-file-read-via-xmlrpcservlet"
       ],
       "cpes": [],
       "vendors": []
     },
     {
-      "cve_id": "CVE-2026-7407",
+      "cve_id": "CVE-2025-71284",
       "published": "N/A",
       "modified": "N/A",
-      "cvss": 2.0,
+      "cvss": 9.3,
       "cvss_version": 4.0,
-      "epss": 0.00036,
-      "severity": "LOW",
+      "epss": 0.00494,
+      "severity": "CRITICAL",
       "kev": false,
       "ransomware": false,
-      "summary": "A security vulnerability has been detected in SourceCodester Pizzafy Ecommerce System 1.0. Affected by this vulnerability is the function save_settings of the file /pizzafy/admin/ajax.php?action=save_settings of the component Setting Handler. Such manipulation leads to sql injection. It is possible to launch the attack remotely. The exploit has been disclosed publicly and may be used.",
+      "summary": "Synway SMG Gateway Management Software contains an OS command injection vulnerability in the RADIUS configuration endpoint at /en/9-2radius.php where the radius_address POST parameter is split and interpolated directly into a sed command without sanitization. An unauthenticated remote attacker can inject arbitrary shell commands by submitting a POST request with crafted radius_address, radius_address2, shared_secret2, source_ip, timeout, or retry parameters along with save=1 and enable_radius=1 to achieve remote code execution. Exploitation evidence was first observed by the Shadowserver Foundation on 2025-07-11 (UTC).",
       "references": [
-        "https://github.com/r3ng4f/Pizzafy_1/blob/main/01-exploit.md",
-        "https://vuldb.com/submit/803613",
-        "https://vuldb.com/vuln/360141",
-        "https://vuldb.com/vuln/360141/cti",
-        "https://www.sourcecodester.com/"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7404",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 5.5,
-      "cvss_version": 4.0,
-      "epss": 0.00023,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A weakness has been identified in getsimpletool mcpo-simple-server up to 0.2.0. Affected is the function delete_shared_prompt of the file src/mcpo_simple_server/services/prompt_manager/base_manager.py. This manipulation of the argument detail causes relative path traversal. It is possible to initiate the attack remotely. The exploit has been made available to the public and could be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
-      "references": [
-        "https://github.com/getsimpletool/mcpo-simple-server/",
-        "https://github.com/getsimpletool/mcpo-simple-server/issues/4",
-        "https://vuldb.com/submit/803612",
-        "https://vuldb.com/vuln/360140",
-        "https://vuldb.com/vuln/360140/cti"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7403",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 5.5,
-      "cvss_version": 4.0,
-      "epss": 0.00016,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A security flaw has been discovered in geldata gel-mcp 0.1.0. This impacts the function list_rules/fetch_rule of the file src/gel_mcp/server.py. The manipulation of the argument rule_name results in path traversal. The attack may be performed from remote. The exploit has been released to the public and may be used for attacks. The project was informed of the problem early through an issue report but has not responded yet.",
-      "references": [
-        "https://github.com/geldata/gel-mcp/",
-        "https://github.com/geldata/gel-mcp/issues/11",
-        "https://vuldb.com/submit/803530",
-        "https://vuldb.com/vuln/360139",
-        "https://vuldb.com/vuln/360139/cti"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7409",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 2.0,
-      "cvss_version": 4.0,
-      "epss": 0.00036,
-      "severity": "LOW",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A flaw has been found in SourceCodester Pizzafy Ecommerce System 1.0. This affects the function save_user of the file /admin/ajax.php?action=save_user. Executing a manipulation can lead to sql injection. The attack can be launched remotely. The exploit has been published and may be used.",
-      "references": [
-        "https://github.com/r3ng4f/Pizzafy_1/blob/main/03-exploit.md",
-        "https://vuldb.com/submit/803624",
-        "https://vuldb.com/vuln/360143",
-        "https://vuldb.com/vuln/360143/cti",
-        "https://www.sourcecodester.com/"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7418",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 7.4,
-      "cvss_version": 4.0,
-      "epss": 0.00046,
-      "severity": "HIGH",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A vulnerability was determined in UTT HiPER 1250GW up to 3.2.7-210907-180535. This vulnerability affects the function strcpy of the file route/goform/NTP. Executing a manipulation of the argument Profile can lead to buffer overflow. The attack may be launched remotely. The exploit has been publicly disclosed and may be utilized.",
-      "references": [
-        "https://github.com/kirlic123/IOTvulner/blob/main/4035/1/1.md",
-        "https://vuldb.com/submit/803993",
-        "https://vuldb.com/vuln/360155",
-        "https://vuldb.com/vuln/360155/cti"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7417",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 5.5,
-      "cvss_version": 4.0,
-      "epss": 0.00059,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A vulnerability was found in Algovate xhs-mcp 0.8.11. This affects the function xhs_publish_content of the file src/server/mcp.server.ts of the component MCP Interface. Performing a manipulation of the argument media_paths results in server-side request forgery. The attack may be initiated remotely. The exploit has been made public and could be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "references": [
-        "https://github.com/Algovate/xhs-mcp/",
-        "https://github.com/Algovate/xhs-mcp/issues/6",
-        "https://github.com/BruceJqs/public_exp/issues/21",
-        "https://vuldb.com/submit/803991",
-        "https://vuldb.com/vuln/360154"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7416",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 5.5,
-      "cvss_version": 4.0,
-      "epss": 0.00414,
-      "severity": "MEDIUM",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A vulnerability was found in PolarVista xcode-mcp-server 1.0.0. This issue affects the function build_project/run_tests of the file src/index.ts of the component MCP Interface. The manipulation of the argument Request results in os command injection. The attack may be launched remotely. The exploit has been made public and could be used. The project was informed of the problem early through an issue report but has not responded yet.",
-      "references": [
-        "https://github.com/BruceJqs/public_exp/issues/19",
-        "https://github.com/PolarVista/Xcode-mcp-server/",
-        "https://github.com/PolarVista/Xcode-mcp-server/issues/4",
-        "https://vuldb.com/submit/803974",
-        "https://vuldb.com/vuln/360145"
-      ],
-      "cpes": [],
-      "vendors": []
-    },
-    {
-      "cve_id": "CVE-2026-7410",
-      "published": "N/A",
-      "modified": "N/A",
-      "cvss": 2.1,
-      "cvss_version": 4.0,
-      "epss": 0.00031,
-      "severity": "LOW",
-      "kev": false,
-      "ransomware": false,
-      "summary": "A vulnerability has been found in SourceCodester Pizzafy Ecommerce System 1.0. This vulnerability affects unknown code of the file /admin/ajax.php?action=add_to_cart. The manipulation of the argument pid leads to sql injection. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used.",
-      "references": [
-        "https://github.com/r3ng4f/Pizzafy_1/blob/main/04-exploit.md",
-        "https://vuldb.com/submit/803625",
-        "https://vuldb.com/vuln/360144",
-        "https://vuldb.com/vuln/360144/cti",
-        "https://www.sourcecodester.com/"
+        "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/synway/synwaysmg-radius-rce.yaml",
+        "https://mp.weixin.qq.com/s/PyepoFSuQ63E3RnpQa9nsA",
+        "https://mrxn.net/jswz/synway-9-2radius-rce.html",
+        "https://www.synway.net/",
+        "https://www.vulncheck.com/advisories/synway-smg-gateway-management-software-os-command-injection-via-radius-address"
       ],
       "cpes": [],
       "vendors": []
