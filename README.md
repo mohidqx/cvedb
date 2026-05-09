@@ -1,11 +1,14 @@
-# cvedb
+# CVE Tracker | TeamCyberOps
 
+> [!INFO]
 > Fast, terminal-native CVE tracker powered by [Shodan's CVEDB](https://cvedb.shodan.io).  
 > Self-updating · Colour-coded severity · Multiple output formats · KEV/EPSS awareness
 
 ```
 cvedb v2.0.0 — Shodan CVE Tracker | github.com/mohidqx/cvedb
 ```
+
+![Results](image.png)
 
 ---
 
@@ -22,8 +25,7 @@ sudo mv cvedb /usr/local/bin/cvedb
 Download the pre-compiled binary from [Releases](https://github.com/mohidqx/cvedb/releases/latest):
 
 ```bash
-# Linux x86_64
-curl -fsSL https://github.com/mohidqx/cvedb/releases/latest/download/cvedb-linux-x86_64 -o cvedb
+curl -fsSL https://github.com/mohidqx/cvedb/releases/latest/download/cvedb -o cvedb
 chmod +x cvedb
 sudo mv cvedb /usr/local/bin/cvedb
 ```
