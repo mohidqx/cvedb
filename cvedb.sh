@@ -366,7 +366,7 @@ print_table() {
   done
 
   printf '%b%s%b\n' "$BOLD" "$sep" "$RESET"
-  printf "%b\n" "  ${BRED}CRITICAL≥9.0${RESET}  ${YELLOW}HIGH≥7.0${RESET}  ${GREEN}MEDIUM≥4.0${RESET}  ${DIM}LOW<4.0${RESET}   ${BRED}[KEV]${RESET}=Known Exploited  ${MAGENTA}[RW]${RESET}=Ransomware"
+  printf "%b\n" "  ${BRED}CRITICAL ≥ 9.0${RESET}  ${YELLOW}HIGH ≥ 7.0${RESET}  ${GREEN}MEDIUM ≥ 4.0${RESET}  ${DIM}LOW < 4.0${RESET}   ${BRED}[KEV]${RESET} = Known Exploited  ${MAGENTA}[RW]${RESET} = Ransomware"
 }
 
 # ─── stats view ───────────────────────────────────────────────────────────────
