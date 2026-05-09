@@ -17,11 +17,16 @@ CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/cvedb/config"
 INSTALL_PATH="${INSTALL_PATH:-/usr/local/bin/cvedb}"
 
 # ─── colours (all written to stderr — never stdout) ───────────────────────────
-RED='\033[0;31m'    BRED='\033[1;31m'
-YELLOW='\033[1;33m' GREEN='\033[0;32m'
-CYAN='\033[0;36m'   BLUE='\033[0;34m'
-MAGENTA='\033[0;35m' BOLD='\033[1m'
-DIM='\033[2m'       RESET='\033[0m'
+RED="$(printf '\033[0;31m')"
+BRED="$(printf '\033[1;31m')"
+YELLOW="$(printf '\033[1;33m')"
+GREEN="$(printf '\033[0;32m')"
+CYAN="$(printf '\033[0;36m')"
+BLUE="$(printf '\033[0;34m')"
+MAGENTA="$(printf '\033[0;35m')"
+BOLD="$(printf '\033[1m')"
+DIM="$(printf '\033[2m')"
+RESET="$(printf '\033[0m')"
 
 # ─── helpers — all write to stderr so they never corrupt $() captures ─────────
 die()     { echo -e "${BRED}✗${RESET} $*" >&2; exit 1; }
@@ -202,6 +207,7 @@ def safe_ref:
     ((.cvss // 0) | severity_level) == ($sev | ascii_upcase)
   )
 ] |
+unique_by(.cve_id) |
 sort_by(.published // .modified // "1970-01-01") |
 reverse |
 .[:($limit | tonumber)] |
@@ -310,14 +316,14 @@ print_table() {
   local sep
   if [[ "$mode" == "wide" ]]; then
     sep="$(printf '─%.0s' {1..112})"
-    printf "${BOLD}  %-20s  %-10s  %-8s  %-8s  %-6s  %-3s  %-3s  %s${RESET}\n" \
-      "CVE ID" "Published" "CVSS" "Severity" "EPSS" "KEV" "RW " "Summary"
+    printf '%b  %-20s  %-10s  %-8s  %-8s  %-6s  %-3s  %-3s  %s%b\n' \
+      "$BOLD" "CVE ID" "Published" "CVSS" "Severity" "EPSS" "KEV" "RW " "Summary" "$RESET"
   else
     sep="$(printf '─%.0s' {1..90})"
-    printf "${BOLD}  %-20s  %-10s  %-8s  %-8s  %-6s  %s${RESET}\n" \
-      "CVE ID" "Published" "CVSS" "Severity" "EPSS" "Summary"
+    printf '%b  %-20s  %-10s  %-8s  %-8s  %-6s  %s%b\n' \
+      "$BOLD" "CVE ID" "Published" "CVSS" "Severity" "EPSS" "Summary" "$RESET"
   fi
-  printf '%s\n' "${BOLD}${sep}${RESET}"
+  printf '%b%s%b\n' "$BOLD" "$sep" "$RESET"
 
   # NUL-separated fields via @base64 avoids ALL tab/newline issues in summary
   printf '%s' "$data" | jq -r '.[] |
@@ -359,8 +365,8 @@ print_table() {
     fi
   done
 
-  printf '%s\n' "${BOLD}${sep}${RESET}"
-  printf "  ${BRED}CRITICAL≥9.0${RESET}  ${YELLOW}HIGH≥7.0${RESET}  ${GREEN}MEDIUM≥4.0${RESET}  ${DIM}LOW<4.0${RESET}   ${BRED}[KEV]${RESET}=Known Exploited  ${MAGENTA}[RW]${RESET}=Ransomware\n"
+  printf '%b%s%b\n' "$BOLD" "$sep" "$RESET"
+  printf "%b\n" "  ${BRED}CRITICAL≥9.0${RESET}  ${YELLOW}HIGH≥7.0${RESET}  ${GREEN}MEDIUM≥4.0${RESET}  ${DIM}LOW<4.0${RESET}   ${BRED}[KEV]${RESET}=Known Exploited  ${MAGENTA}[RW]${RESET}=Ransomware"
 }
 
 # ─── stats view ───────────────────────────────────────────────────────────────
