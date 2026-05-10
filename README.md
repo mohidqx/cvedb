@@ -76,6 +76,43 @@ cvedb update               # self-update from GitHub
 | `cvedb stats` | Feed statistics & top vendor breakdown |
 | `cvedb update` | Self-update binary from GitHub |
 | `cvedb clear-cache` | Clear the local feed cache |
+| `cvedb scan <target>` | Scan target for known CVE vulnerabilities *(offensive addon)* |
+| `cvedb nuclei <cve-id>` | Run Nuclei templates against CVE *(offensive addon)* |
+| `cvedb poc <cve-id>` | Execute public POC for CVE *(offensive addon)* |
+
+---
+
+## Offensive Addon (v2.1.0+)
+
+The optional **cvedb-offensive** addon extends cvedb with scanning and exploitation capabilities.
+
+### Installation
+
+Add this line to your `cvedb.sh` before `main "$@"`:
+```bash
+source "$(dirname "$0")/cvedb-offensive.sh"
+```
+
+Or run standalone:
+```bash
+./cvedb-offensive.sh poc CVE-2024-1234
+```
+
+### New Commands
+
+| Command | Description |
+|---------|-------------|
+| `cvedb scan <target>` | Port scan and CVE inventory for IP/domain |
+| `cvedb nuclei <cve-id>` | Run Nuclei templates against the CVE |
+| `cvedb poc <cve-id>` | Download and execute public POC |
+
+### Requirements (Offensive)
+
+| Tool | Purpose |
+|------|----------|
+| `nuclei` | Vulnerability scanner |
+| `nmap` | Port scanning |
+| `curl` / `wget` | POC fetching |
 
 ---
 

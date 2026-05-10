@@ -747,4 +747,7 @@ main() {
   _run_fetch "$TARGET_DATE" "$OUTPUT_FORMAT" "$OUTPUT_FILE"
 }
 
+# ─── load offensive addon ──────────────────────────────────────────────────────
+source "$(dirname "$0")/cvedb-offensive.sh"
+
 main "$@"

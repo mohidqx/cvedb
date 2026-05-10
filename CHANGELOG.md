@@ -6,6 +6,26 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.1.0] — 2026-05-10
+
+### ✨ New Features
+- **Offensive Addon Integration** — `cvedb-offensive.sh` now sourced by default in `cvedb.sh`, adds three new commands:
+  - `cvedb scan <target>` — Port scan and enumerate CVEs for a target IP/domain
+  - `cvedb nuclei <cve-id>` — Run Nuclei templates against a specific CVE
+  - `cvedb poc <cve-id>` — Download and execute public POC for a CVE
+- **Dual-mode addon** — Install as option A (source into cvedb.sh) or option B (run standalone)
+- **Integrated help** — `cvedb help` now includes offensive commands
+
+### 🔧 Changed
+- **Default behaviour** — offensive addon is now auto-loaded when `cvedb-offensive.sh` is present in the same directory
+
+### 📋 Requirements (Offensive)
+- `nuclei` — Template-based vulnerability scanner
+- `nmap` — Network scanning
+- `curl` or `wget` — POC delivery
+
+---
+
 ## [2.0.0] — 2026-05-09
 
 ### ✨ New Features
