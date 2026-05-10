@@ -5,7 +5,7 @@
 > Self-updating · Colour-coded severity · Multiple output formats · KEV/EPSS awareness
 
 ```
-cvedb v2.0.0 — Shodan CVE Tracker | github.com/mohidqx/cvedb
+cvedb v2.1.0 — Shodan CVE Tracker | github.com/mohidqx/cvedb
 ```
 
 ![Sample Run](image-1.png)
