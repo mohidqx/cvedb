@@ -13,16 +13,31 @@ Versioning follows [Semantic Versioning](https://semver.org/).
   - `cvedb scan <target>` — Port scan and enumerate CVEs for a target IP/domain
   - `cvedb nuclei <cve-id>` — Run Nuclei templates against a specific CVE
   - `cvedb poc <cve-id>` — Download and execute public POC for a CVE
-- **Dual-mode addon** — Install as option A (source into cvedb.sh) or option B (run standalone)
-- **Integrated help** — `cvedb help` now includes offensive commands
+- **Automated Installation** — New `install.sh` script handles full setup:
+  - Auto-detects OS and package manager (apt/yum/pacman/apk/brew)
+  - Installs all dependencies automatically
+  - Copies both `cvedb` and `cvedb-offensive` to global path (`/usr/local/bin` or custom)
+  - Creates config and cache directories
+  - Generates sample configuration file with placeholders for API keys
+- **Comprehensive Documentation** — New `commands.md` reference guide with all commands, options, and 10+ real-world examples
 
 ### 🔧 Changed
-- **Default behaviour** — offensive addon is now auto-loaded when `cvedb-offensive.sh` is present in the same directory
+- **Conditional offensive addon loading** — cvedb.sh now gracefully handles missing offensive addon (file check before source)
+- **Installation method** — simplified to `./install.sh` (Option A in README, recommended)
+- **Both binaries installed globally** — `cvedb` and `cvedb-offensive` copied to same directory for seamless integration
 
-### 📋 Requirements (Offensive)
+### 🐛 Fixed
+- Fixed missing file error when cvedb-offensive.sh not found — now wrapped in conditional check
+
+### 📋 Requirements (Core)
+- `curl` — HTTP requests
+- `jq` — JSON parsing
+- `bc` — Math operations
+
+### 📋 Requirements (Offensive - Optional)
 - `nuclei` — Template-based vulnerability scanner
 - `nmap` — Network scanning
-- `curl` or `wget` — POC delivery
+- `git` — POC repository cloning
 
 ---
 

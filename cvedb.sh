@@ -747,7 +747,10 @@ main() {
   _run_fetch "$TARGET_DATE" "$OUTPUT_FORMAT" "$OUTPUT_FILE"
 }
 
-# ─── load offensive addon ──────────────────────────────────────────────────────
-source "$(dirname "$0")/cvedb-offensive.sh"
+# ─── load offensive addon (optional) ───────────────────────────────────────────
+if [[ -f "$(dirname "$0")/cvedb-offensive.sh" ]]; then
+  # shellcheck disable=SC1090
+  source "$(dirname "$0")/cvedb-offensive.sh"
+fi
 
 main "$@"

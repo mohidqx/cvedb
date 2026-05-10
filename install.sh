@@ -191,13 +191,13 @@ install_binaries() {
     sudo chmod +x "${INSTALL_PREFIX}/cvedb"
   fi
   
-  info "Installing cvedb-offensive → ${INSTALL_PREFIX}/cvedb-offensive"
+  info "Installing cvedb-offensive → ${INSTALL_PREFIX}/cvedb-offensive.sh"
   if [[ -w "$INSTALL_PREFIX" ]]; then
-    cp "$SCRIPT_DIR/cvedb-offensive.sh" "${INSTALL_PREFIX}/cvedb-offensive"
-    chmod +x "${INSTALL_PREFIX}/cvedb-offensive"
+    cp "$SCRIPT_DIR/cvedb-offensive.sh" "${INSTALL_PREFIX}/cvedb-offensive.sh"
+    chmod +x "${INSTALL_PREFIX}/cvedb-offensive.sh"
   else
-    sudo cp "$SCRIPT_DIR/cvedb-offensive.sh" "${INSTALL_PREFIX}/cvedb-offensive"
-    sudo chmod +x "${INSTALL_PREFIX}/cvedb-offensive"
+    sudo cp "$SCRIPT_DIR/cvedb-offensive.sh" "${INSTALL_PREFIX}/cvedb-offensive.sh"
+    sudo chmod +x "${INSTALL_PREFIX}/cvedb-offensive.sh"
   fi
   
   ok "Binaries installed to ${INSTALL_PREFIX}"
@@ -378,6 +378,21 @@ main() {
   
   # Success summary
   section "Installation Complete! ✨"
+  echo ""
+  
+  # Check what was installed
+  if [[ -x "${INSTALL_PREFIX}/cvedb" ]]; then
+    ok "cvedb:               ${INSTALL_PREFIX}/cvedb"
+  else
+    die "cvedb installation failed"
+  fi
+  
+  if [[ -x "${INSTALL_PREFIX}/cvedb-offensive.sh" ]]; then
+    ok "cvedb-offensive.sh:  ${INSTALL_PREFIX}/cvedb-offensive.sh"
+  else
+    warn "cvedb-offensive.sh: NOT installed (offensive addon disabled)"
+  fi
+  
   echo ""
   echo "${GREEN}cvedb is ready to use!${RESET}"
   echo ""

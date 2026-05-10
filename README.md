@@ -14,36 +14,58 @@ cvedb v2.0.0 — Shodan CVE Tracker | github.com/mohidqx/cvedb
 
 ## Install
 
-### Option A — Script (`.sh`)
+### Option A — Automated Installation (Recommended)
+
+Clone the repo and run the install script:
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mohidqx/cvedb/main/cvedb.sh -o cvedb
-chmod +x cvedb
-sudo mv cvedb /usr/local/bin/cvedb
+git clone https://github.com/mohidqx/cvedb.git
+cd cvedb
+./install.sh
 ```
 
-### Option B — Compiled binary
-Download the pre-compiled binary from [Releases](https://github.com/mohidqx/cvedb/releases/latest):
+**What the script does:**
+- ✅ Detects OS and installs all dependencies (curl, jq, bc, nmap, nuclei)
+- ✅ Copies both `cvedb` and `cvedb-offensive` to `/usr/local/bin/` (or custom path)
+- ✅ Creates config directories (`~/.config/cvedb`, `~/.cache/cvedb`)
+- ✅ Generates sample config file
+- ✅ Updates PATH if needed
+
+**Custom installation path:**
+```bash
+./install.sh --prefix "$HOME/.local/bin"
+```
+
+**Skip dependency installation (if pre-installed):**
+```bash
+./install.sh --skip-deps
+```
+
+### Option B — Manual Installation
+
+If you prefer manual setup:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mohidqx/cvedb/main/cvedb.sh -o cvedb
-chmod +x cvedb
-sudo mv cvedb /usr/local/bin/cvedb
+# 1. Install dependencies
+sudo apt install curl jq bc nmap nuclei  # Ubuntu/Debian
+brew install curl jq bc nmap nuclei      # macOS
+
+# 2. Copy both binaries globally
+sudo cp cvedb.sh /usr/local/bin/cvedb
+sudo cp cvedb-offensive.sh /usr/local/bin/cvedb-offensive
+sudo chmod +x /usr/local/bin/cvedb /usr/local/bin/cvedb-offensive
+
+# 3. Verify installation
+cvedb --version
 ```
 
 ### Dependencies
-| Tool | Purpose |
-|------|---------|
-| `curl` | HTTP fetching |
-| `jq` | JSON parsing |
-| `bc` | CVSS float comparison |
-
-```bash
-# Ubuntu / Debian
-sudo apt install curl jq bc
-
-# macOS
-brew install curl jq bc
-```
+| Tool | Purpose | Required |
+|------|---------|----------|
+| `curl` | HTTP fetching | ✓ Yes |
+| `jq` | JSON parsing | ✓ Yes |
+| `bc` | CVSS float comparison | ✓ Yes |
+| `nmap` | Port scanning | ✗ Optional (for scan command) |
+| `nuclei` | Vulnerability templates | ✗ Optional (for nuclei command) |
 
 ---
 

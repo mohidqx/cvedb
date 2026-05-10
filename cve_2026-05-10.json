@@ -1,0 +1,418 @@
+{
+  "generated_at": "2026-05-10T07:12:21Z",
+  "cvedb_version": "2.1.0",
+  "filter_date": "2026-05-10",
+  "count": 20,
+  "cves": [
+    {
+      "cve_id": "CVE-2026-7865",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 7.4,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A hidden console command is vulnerable to command injection\nflaw when control characters are passed to its second argument. \n\nA third party researcher Eugene Lim had discovered vulnerability\nin the way console command passes to a popen function call. Attackers with\nauthenticated access to SSH console of Crestron devices may use to run\nunderlying OS commands.",
+      "references": [
+        "https://www.crestron.com/Software-Firmware/Firmware/Touchpanels/TS-770-TS-1070-TSS-770-TSS-1070-TSW-570/3-003-0015-001",
+        "https://www.crestron.com/release_notes/tsw-xx70_3.003.0015.001_release_notes.pdf"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7857",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 7.3,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability has been found in D-Link DI-8100 16.07.26A1. This vulnerability affects the function sprintf of the file /user_group.asp of the component CGI Handler. The manipulation leads to buffer overflow. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used.",
+      "references": [
+        "https://github.com/draw-ctf/report/blob/main/DI-8100/user_group_asp_overflow.md",
+        "https://vuldb.com/submit/807853",
+        "https://vuldb.com/vuln/361134",
+        "https://vuldb.com/vuln/361134/cti",
+        "https://www.dlink.com/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7856",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 7.3,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A flaw has been found in D-Link DI-8100 16.07.26A1. This affects an unknown part of the file /url_member.asp of the component Web Management Interface. Executing a manipulation of the argument Name can lead to buffer overflow. The attack can be launched remotely. The exploit has been published and may be used.",
+      "references": [
+        "https://github.com/draw-ctf/report/blob/main/DI-8100/url_member_asp_overflow.md",
+        "https://vuldb.com/submit/807849",
+        "https://vuldb.com/vuln/361133",
+        "https://vuldb.com/vuln/361133/cti",
+        "https://www.dlink.com/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7855",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 7.4,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability was detected in D-Link DI-8100 16.07.26A1. Affected by this issue is the function tggl_asp of the file /tggl.asp of the component HTTP Request Handler. Performing a manipulation of the argument Name results in buffer overflow. The attack can be initiated remotely. The exploit is now public and may be used.",
+      "references": [
+        "https://github.com/draw-ctf/report/blob/main/DI-8100/tggl_asp_overflow.md",
+        "https://vuldb.com/submit/807841",
+        "https://vuldb.com/vuln/361132",
+        "https://vuldb.com/vuln/361132/cti",
+        "https://www.dlink.com/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7854",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 8.9,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A security vulnerability has been detected in D-Link DI-8100 16.07.26A1. Affected by this vulnerability is the function url_rule_asp of the file /url_rule.asp of the component POST Parameter Handler. Such manipulation leads to buffer overflow. It is possible to launch the attack remotely. The exploit has been disclosed publicly and may be used.",
+      "references": [
+        "https://github.com/draw-ctf/report/blob/main/DI-8100/url_rule_asp_overflow.md",
+        "https://vuldb.com/submit/807838",
+        "https://vuldb.com/vuln/361131",
+        "https://vuldb.com/vuln/361131/cti",
+        "https://www.dlink.com/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7853",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 8.9,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A weakness has been identified in D-Link DI-8100 16.07.26A1. Affected is the function sprintf of the file /auto_reboot.asp of the component HTTP Handler. This manipulation of the argument enable/time causes buffer overflow. It is possible to initiate the attack remotely. The exploit has been made available to the public and could be used for attacks.",
+      "references": [
+        "https://github.com/draw-ctf/report/blob/main/DI-8100/auto_reboot_asp_overflow.md",
+        "https://vuldb.com/submit/807837",
+        "https://vuldb.com/vuln/361130",
+        "https://vuldb.com/vuln/361130/cti",
+        "https://www.dlink.com/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7851",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 7.3,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability was identified in D-Link DI-8100 16.07.26A1. This affects the function sprintf of the file yyxz.asp. The manipulation of the argument ID leads to stack-based buffer overflow. The attack is possible to be carried out remotely. The exploit is publicly available and might be used.",
+      "references": [
+        "https://github.com/draw-ctf/report/blob/main/DI-8100/yyxz_dlink_asp_overflow.md",
+        "https://vuldb.com/submit/807798",
+        "https://vuldb.com/vuln/361128",
+        "https://vuldb.com/vuln/361128/cti",
+        "https://www.dlink.com/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7847",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 1.2,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "LOW",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability was found in chatchat-space Langchain-Chatchat up to 0.3.1.3. The affected element is the function _get_file_id of the file libs/chatchat-server/chatchat/server/api_server/openai_routes.py of the component Uploaded File Handler. Performing a manipulation results in insufficiently random values. Access to the local network is required for this attack. The attack's complexity is rated as high. The exploitability is described as difficult. The exploit has been made public and could be used. The project was informed of the problem early through an issue report but has not responded yet.",
+      "references": [
+        "https://github.com/3em0/cve_repo/blob/main/Langchain-Chatchat/Vuln-3-Predictable-File-ID.md",
+        "https://github.com/chatchat-space/Langchain-Chatchat/",
+        "https://github.com/chatchat-space/Langchain-Chatchat/issues/5464",
+        "https://vuldb.com/submit/807796",
+        "https://vuldb.com/vuln/361126"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7846",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 1.2,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "LOW",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability has been found in chatchat-space Langchain-Chatchat up to 0.3.1.3. Impacted is the function files of the file libs/chatchat-server/chatchat/server/api_server/openai_routes.py of the component OpenAI-Compatible File Upload API. Such manipulation of the argument file.filename leads to time-of-check time-of-use. Access to the local network is required for this attack to succeed. The attack requires a high level of complexity. The exploitability is considered difficult. The exploit has been disclosed to the public and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
+      "references": [
+        "https://github.com/3em0/cve_repo/blob/main/Langchain-Chatchat/Vuln-2-Silent-File-Overwrite.md",
+        "https://github.com/chatchat-space/Langchain-Chatchat/",
+        "https://github.com/chatchat-space/Langchain-Chatchat/issues/5463",
+        "https://vuldb.com/submit/807795",
+        "https://vuldb.com/vuln/361125"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7845",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 1.2,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "LOW",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A flaw has been found in chatchat-space Langchain-Chatchat up to 0.3.1.3. This issue affects the function PIL.Image.tobytes of the file libs/chatchat-server/chatchat/webui_pages/dialogue/dialogue.py of the component Vision Chat Paste Image Handler. This manipulation of the argument paste_image.image_data causes use of weak hash. The attacker needs to be present on the local network. The attack is considered to have high complexity. The exploitability is assessed as difficult. The exploit has been published and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
+      "references": [
+        "https://github.com/3em0/cve_repo/blob/main/Langchain-Chatchat/Vuln-1-tobytes-Hash-Collision.md",
+        "https://github.com/chatchat-space/Langchain-Chatchat/",
+        "https://github.com/chatchat-space/Langchain-Chatchat/issues/5462",
+        "https://vuldb.com/submit/807794",
+        "https://vuldb.com/vuln/361124"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7844",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 2.1,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "LOW",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability was detected in chatchat-space Langchain-Chatchat up to 0.3.1.3. This vulnerability affects the function files/list_files/retrieve_file/retrieve_file_content/delete_file of the file libs/chatchat-server/chatchat/server/api_server/openai_routes.py of the component Compatible File Service. The manipulation results in missing authentication. The attacker must have access to the local network to execute the attack. The exploit is now public and may be used. The project was informed of the problem early through an issue report but has not responded yet.",
+      "references": [
+        "https://github.com/3em0/cve_repo/blob/main/Langchain-Chatchat/Vuln-4-Missing-Auth-File-Endpoints.md",
+        "https://github.com/chatchat-space/Langchain-Chatchat/",
+        "https://github.com/chatchat-space/Langchain-Chatchat/issues/5465",
+        "https://vuldb.com/submit/807790",
+        "https://vuldb.com/vuln/361123"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7834",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 8.9,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A security vulnerability has been detected in EFM ipTIME NAS1dual 1.5.24. This issue affects the function get_csrf_whites of the file /cgi/advanced/misc_main.cgi. Such manipulation leads to stack-based buffer overflow. The attack can be launched remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "references": [
+        "https://github.com/glkfc/IoT-Vulnerability/blob/main/iptime/nas1dual/iptime2_en.md",
+        "https://vuldb.com/submit/807787",
+        "https://vuldb.com/vuln/361113",
+        "https://vuldb.com/vuln/361113/cti"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7833",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 7.3,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A weakness has been identified in EFM ipTIME C200 up to 1.092. This vulnerability affects the function sub_408F90 of the file /cgi/iux_set.cgi of the component ApplyRestore Endpoint. This manipulation of the argument RestoreFile causes command injection. The attack can be initiated remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "references": [
+        "https://github.com/glkfc/IoT-Vulnerability/blob/main/iptime/c200/sub_409054_vulnerability_report_EN.md",
+        "https://vuldb.com/submit/807786",
+        "https://vuldb.com/vuln/361112",
+        "https://vuldb.com/vuln/361112/cti"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7832",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 6.4,
+      "cvss_version": 4.0,
+      "epss": 0,
+      "severity": "MEDIUM",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A security flaw has been discovered in IObit Advanced SystemCare 19. This affects an unknown part of the file ASC.exe of the component Service. The manipulation results in symlink following. Attacking locally is a requirement. This attack is characterized by high complexity. It is indicated that the exploitability is difficult. The exploit has been released to the public and may be used for attacks.",
+      "references": [
+        "https://github.com/usernameone101/Writeups/blob/main/IObit%20Zero%20Day%20(Updated%20v2).pdf",
+        "https://vuldb.com/submit/797630",
+        "https://vuldb.com/vuln/361111",
+        "https://vuldb.com/vuln/361111/cti"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7824",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 5.9,
+      "cvss_version": 4.0,
+      "epss": 0.00046,
+      "severity": "MEDIUM",
+      "kev": false,
+      "ransomware": false,
+      "summary": "An issue was discovered in the PaperCut Hive Ricoh embedded application. When the \"Deep Logging\" (diagnostic) mode is enabled, the application inadvertently records administrative credentials in plain text within the log files.\n\n\n\nAn attacker with administrative access to the PaperCut Hive management portal could remotely enable deep logging and subsequently retrieve sensitive device passwords from the logs after an authorized user authenticates at the device. This exposure allows for the lateral movement or unauthorized configuration of the physical print hardware.",
+      "references": [
+        "https://www.papercut.com/kb/Main/papercut-ng-mf-and-papercut-hive-security-bulletin-may-2026/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7823",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 8.9,
+      "cvss_version": 4.0,
+      "epss": 0.00892,
+      "severity": "HIGH",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A security flaw has been discovered in Totolink A8000RU 7.1cu.643_b20200521. Affected is the function setAppFilterCfg of the file /cgi-bin/cstecgi.cgi. The manipulation of the argument enable results in os command injection. The attack may be launched remotely. The exploit has been released to the public and may be used for attacks.",
+      "references": [
+        "https://github.com/Litengzheng/vuldb_new2/blob/main/A8000RU/vul_330/README.md",
+        "https://vuldb.com/submit/807775",
+        "https://vuldb.com/vuln/361075",
+        "https://vuldb.com/vuln/361075/cti",
+        "https://www.totolink.net/"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7822",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 2.1,
+      "cvss_version": 4.0,
+      "epss": 0.00028,
+      "severity": "LOW",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability was identified in itsourcecode Courier Management System 1.0. This impacts an unknown function of the file /print_pdets.php. The manipulation of the argument ids leads to sql injection. The attack may be initiated remotely. The exploit is publicly available and might be used.",
+      "references": [
+        "https://github.com/ltranquility/submit/issues/14",
+        "https://itsourcecode.com/",
+        "https://vuldb.com/submit/807773",
+        "https://vuldb.com/vuln/361074",
+        "https://vuldb.com/vuln/361074/cti"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7812",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 5.5,
+      "cvss_version": 4.0,
+      "epss": 0.01039,
+      "severity": "MEDIUM",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability was found in 54yyyu code-mcp up to 4cfc4643541a110c906d93635b391bf7e357f4a8. The impacted element is the function git_operation of the file src/code_mcp/server.py of the component MCP Tool. Performing a manipulation of the argument operation results in command injection. The attack can be initiated remotely. The exploit has been made public and could be used. Continious delivery with rolling releases is used by this product. Therefore, no version details of affected nor updated releases are available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "references": [
+        "https://github.com/54yyyu/code-mcp/",
+        "https://github.com/54yyyu/code-mcp/issues/5",
+        "https://vuldb.com/submit/807752",
+        "https://vuldb.com/vuln/361072",
+        "https://vuldb.com/vuln/361072/cti"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7811",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 5.5,
+      "cvss_version": 4.0,
+      "epss": 0.00046,
+      "severity": "MEDIUM",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A vulnerability has been found in 54yyyu code-mcp up to 4cfc4643541a110c906d93635b391bf7e357f4a8. The affected element is the function is_safe_path of the file src/code_mcp/server.py of the component MCP File Handler. Such manipulation leads to path traversal. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "references": [
+        "https://github.com/54yyyu/code-mcp/",
+        "https://github.com/54yyyu/code-mcp/issues/4",
+        "https://vuldb.com/submit/807751",
+        "https://vuldb.com/vuln/361071",
+        "https://vuldb.com/vuln/361071/cti"
+      ],
+      "cpes": [],
+      "vendors": []
+    },
+    {
+      "cve_id": "CVE-2026-7810",
+      "published": "N/A",
+      "modified": "N/A",
+      "cvss": 5.5,
+      "cvss_version": 4.0,
+      "epss": 0.00046,
+      "severity": "MEDIUM",
+      "kev": false,
+      "ransomware": false,
+      "summary": "A flaw has been found in UsamaK98 python-notebook-mcp up to a05a232815809a7e425b5fa7be26e0d4369894c2. Impacted is the function create_notebook/read_notebook/edit_cell/add_cell of the file server.py. This manipulation causes path traversal. It is possible to initiate the attack remotely. The exploit has been published and may be used. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The project was informed of the problem early through an issue report but has not responded yet.",
+      "references": [
+        "https://github.com/UsamaK98/python-notebook-mcp/",
+        "https://github.com/UsamaK98/python-notebook-mcp/issues/5",
+        "https://vuldb.com/submit/807748",
+        "https://vuldb.com/vuln/361070",
+        "https://vuldb.com/vuln/361070/cti"
+      ],
+      "cpes": [],
+      "vendors": []
+    }
+  ]
+}
