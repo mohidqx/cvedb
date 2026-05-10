@@ -16,18 +16,26 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 - **Automated Installation** — New `install.sh` script handles full setup:
   - Auto-detects OS and package manager (apt/yum/pacman/apk/brew)
   - Installs all dependencies automatically
-  - Copies both `cvedb` and `cvedb-offensive` to global path (`/usr/local/bin` or custom)
+  - Copies both `cvedb` and `cvedb-offensive.sh` to global path (`/usr/local/bin` or custom)
   - Creates config and cache directories
   - Generates sample configuration file with placeholders for API keys
 - **Comprehensive Documentation** — New `commands.md` reference guide with all commands, options, and 10+ real-world examples
+- **Enhanced Update Mechanism** — `cvedb update` now handles multiple components:
+  - Automatically updates `cvedb.sh` (core binary)
+  - Updates `cvedb-offensive.sh` if installed
+  - Updates `install.sh` if present in installation directory
+  - Shows detailed status for each component updated
+  - Gracefully skips components that don't exist
 
 ### 🔧 Changed
 - **Conditional offensive addon loading** — cvedb.sh now gracefully handles missing offensive addon (file check before source)
 - **Installation method** — simplified to `./install.sh` (Option A in README, recommended)
-- **Both binaries installed globally** — `cvedb` and `cvedb-offensive` copied to same directory for seamless integration
+- **Both binaries installed globally** — `cvedb` and `cvedb-offensive.sh` copied to same directory for seamless integration
+- **Update command** — now detects installation location and updates all co-located scripts
 
 ### 🐛 Fixed
 - Fixed missing file error when cvedb-offensive.sh not found — now wrapped in conditional check
+- Fixed extension naming — install script now preserves `.sh` extension for cvedb-offensive.sh
 
 ### 📋 Requirements (Core)
 - `curl` — HTTP requests

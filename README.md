@@ -272,8 +272,37 @@ prints a one-line notice after your results. To update immediately:
 cvedb update
 ```
 
-This pulls the latest `cvedb.sh` from the `main` branch, compares semver, and
-replaces the installed binary — using `sudo` automatically if needed.
+### What Gets Updated
+
+The `update` command intelligently updates all components in your installation:
+
+| Component | Updated | Notes |
+|-----------|---------|-------|
+| `cvedb` | ✓ Always | Core binary |
+| `cvedb-offensive.sh` | ✓ If installed | Optional addon |
+| `install.sh` | ✓ If present | Installation script |
+| `commands.md` | — | Re-download manually if needed |
+
+The update process:
+1. Checks GitHub for new releases (semantic versioning)
+2. Compares local version with remote version
+3. Downloads all updated files to temp locations
+4. Atomically replaces old files with new ones
+5. Uses `sudo` automatically if needed for `/usr/local/bin`
+6. Shows detailed status of each file updated
+
+### Manual Update
+
+To update documentation or specific files without updating binaries:
+
+```bash
+# Download latest commands reference
+curl -fsSL https://raw.githubusercontent.com/mohidqx/cvedb/main/commands.md -o commands.md
+
+# Download latest install script
+curl -fsSL https://raw.githubusercontent.com/mohidqx/cvedb/main/install.sh -o install.sh
+chmod +x install.sh
+```
 
 ---
 

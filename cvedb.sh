@@ -72,22 +72,83 @@ cmd_update() {
 
   if ver_gt "$remote_ver" "$VERSION"; then
     info "New version available: ${BOLD}v${remote_ver}${RESET}"
-    info "Downloading from ${RAW_BASE}/cvedb.sh …"
-    local tmp
-    tmp=$(mktemp)
-    if ! curl -fsSL --max-time 30 "${RAW_BASE}/cvedb.sh" -o "$tmp"; then
-      rm -f "$tmp"; die "Download failed."
+    
+    # Determine install directory (where cvedb is installed)
+    local install_dir
+    install_dir="$(dirname "$INSTALL_PATH")"
+    
+    # Update cvedb.sh
+    info "Downloading cvedb.sh…"
+    local tmp_cvedb
+    tmp_cvedb=$(mktemp)
+    if ! curl -fsSL --max-time 30 "${RAW_BASE}/cvedb.sh" -o "$tmp_cvedb"; then
+      rm -f "$tmp_cvedb"; die "Download failed."
     fi
-    chmod +x "$tmp"
+    chmod +x "$tmp_cvedb"
+    
+    # Update cvedb-offensive.sh if it exists
+    local tmp_offensive=""
+    if [[ -f "${install_dir}/cvedb-offensive.sh" ]]; then
+      info "Downloading cvedb-offensive.sh…"
+      tmp_offensive=$(mktemp)
+      if ! curl -fsSL --max-time 30 "${RAW_BASE}/cvedb-offensive.sh" -o "$tmp_offensive"; then
+        rm -f "$tmp_offensive"
+        warn "Could not update cvedb-offensive.sh, continuing anyway…"
+        tmp_offensive=""
+      else
+        chmod +x "$tmp_offensive"
+      fi
+    fi
+    
+    # Update install.sh if it exists
+    local tmp_install=""
+    if [[ -f "${install_dir}/install.sh" ]]; then
+      info "Downloading install.sh…"
+      tmp_install=$(mktemp)
+      if ! curl -fsSL --max-time 30 "${RAW_BASE}/install.sh" -o "$tmp_install"; then
+        rm -f "$tmp_install"
+        warn "Could not update install.sh, continuing anyway…"
+        tmp_install=""
+      else
+        chmod +x "$tmp_install"
+      fi
+    fi
+    
+    # Apply updates
     if [[ -w "$INSTALL_PATH" ]]; then
-      mv "$tmp" "$INSTALL_PATH"
-      ok "Updated to v${remote_ver}  →  ${INSTALL_PATH}"
+      mv "$tmp_cvedb" "$INSTALL_PATH"
+      ok "Updated cvedb"
+      
+      [[ -n "$tmp_offensive" ]] && {
+        mv "$tmp_offensive" "${install_dir}/cvedb-offensive.sh"
+        ok "Updated cvedb-offensive.sh"
+      }
+      
+      [[ -n "$tmp_install" ]] && {
+        mv "$tmp_install" "${install_dir}/install.sh"
+        ok "Updated install.sh"
+      }
+      
+      ok "${BOLD}All updates installed  →  v${remote_ver}${RESET}"
     else
       warn "No write permission to ${INSTALL_PATH}. Trying sudo…"
-      if sudo mv "$tmp" "$INSTALL_PATH"; then
-        ok "Updated to v${remote_ver}  →  ${INSTALL_PATH}"
+      if sudo mv "$tmp_cvedb" "$INSTALL_PATH"; then
+        ok "Updated cvedb"
+        
+        [[ -n "$tmp_offensive" ]] && {
+          sudo mv "$tmp_offensive" "${install_dir}/cvedb-offensive.sh"
+          ok "Updated cvedb-offensive.sh"
+        }
+        
+        [[ -n "$tmp_install" ]] && {
+          sudo mv "$tmp_install" "${install_dir}/install.sh"
+          ok "Updated install.sh"
+        }
+        
+        ok "${BOLD}All updates installed  →  v${remote_ver}${RESET}"
       else
-        rm -f "$tmp"; die "Update failed. Try: sudo cvedb update"
+        rm -f "$tmp_cvedb" "$tmp_offensive" "$tmp_install"
+        die "Update failed. Try: sudo cvedb update"
       fi
     fi
   else

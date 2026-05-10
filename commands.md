@@ -129,15 +129,37 @@ cvedb watch 30 -f json -o results.json # continuous JSON export
 
 ### Maintenance
 
-#### `cvedb update` — Self-Update
-Check for new releases and auto-update the binary.
+#### `cvedb update` — Self-Update (All Components)
+Check for new releases and auto-update all installed components.
 ```bash
 cvedb update
 ```
 **Behaviour:**
-- Compares local version with GitHub releases
-- Downloads latest if newer
-- Uses `sudo` if needed for `/usr/local/bin/cvedb`
+- Compares local version with GitHub releases (semantic versioning)
+- Detects installation directory and co-located scripts
+- Downloads updates for all present components:
+  - `cvedb` (core binary) — always updated
+  - `cvedb-offensive.sh` — updated if installed
+  - `install.sh` — updated if present
+- Shows detailed status for each updated component
+- Uses `sudo` if needed for `/usr/local/bin` permissions
+- Gracefully handles missing components (skips them)
+
+**Example output:**
+```
+→ Checking for updates (current: v2.1.0)…
+→ New version available: v2.1.1
+→ Downloading cvedb.sh…
+→ Downloading cvedb-offensive.sh…
+→ Downloading install.sh…
+✔ Updated cvedb
+✔ Updated cvedb-offensive.sh
+✔ Updated install.sh
+✔ All updates installed  →  v2.1.1
+```
+
+**Custom installation paths:**
+If you installed to a custom location (e.g., `$HOME/.local/bin`), the update command will detect it and update all scripts in that directory.
 
 ---
 
