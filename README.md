@@ -51,8 +51,8 @@ brew install curl jq bc nmap nuclei      # macOS
 
 # 2. Copy both binaries globally
 sudo cp cvedb.sh /usr/local/bin/cvedb
-sudo cp cvedb-offensive.sh /usr/local/bin/cvedb-offensive
-sudo chmod +x /usr/local/bin/cvedb /usr/local/bin/cvedb-offensive
+sudo cp cvedb-offensive.sh /usr/local/bin/cvedb-offensive.sh
+sudo chmod +x /usr/local/bin/cvedb /usr/local/bin/cvedb-offensive.sh
 
 # 3. Verify installation
 cvedb --version
