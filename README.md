@@ -25,7 +25,7 @@ sudo mv cvedb /usr/local/bin/cvedb
 Download the pre-compiled binary from [Releases](https://github.com/mohidqx/cvedb/releases/latest):
 
 ```bash
-curl -fsSL https://github.com/mohidqx/cvedb/releases/latest/download/cvedb -o cvedb
+curl -fsSL https://raw.githubusercontent.com/mohidqx/cvedb/main/cvedb.sh -o cvedb
 chmod +x cvedb
 sudo mv cvedb /usr/local/bin/cvedb
 ```
